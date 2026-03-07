@@ -2,6 +2,12 @@ extends CharacterBody2D
 
 @export var speed = 400
 
+var carrying_wheat = false
+var carrying_water = false
+var carrying_salt = false
+var carrying_yeast = false
+var carrying_food = false
+
 func _ready() -> void:
 	$Label2.text = "Active Recipe: " + Global.active_food
 	$Label.add_theme_constant_override("shadow_outline_size", 20)
@@ -21,13 +27,46 @@ func get_input():
 		$AnimatedSprite2D.rotation = atan2(velocity.x, velocity.y)
 
 func _physics_process(delta):
-	if velocity.x > 0:
+	if !carrying_food:
+		$Label.text = "Carrying: Nothing"
+	if Input.is_action_just_pressed("drop"):
+		carrying_food = false
+		carrying_salt = false
+		carrying_wheat = false
+		carrying_water = false
+		carrying_yeast = false
+	if $RayCast2D.is_colliding():
+		if $RayCast2D.get_collider().is_in_group("wheat") and carrying_food == false:
+			if Input.is_action_just_pressed("pickup"):
+				print("Picking up object")
+				$Label.text = "Carrying: Wheat"
+				carrying_food = true
+				carrying_wheat = true
+		elif $RayCast2D.get_collider().is_in_group("salt") and carrying_food == false:
+			if Input.is_action_just_pressed("pickup"):
+				print("Picking up object")
+				$Label.text = "Carrying: Salt"
+				carrying_food = true
+				carrying_salt = true
+		elif $RayCast2D.get_collider().is_in_group("water") and carrying_food == false:
+			if Input.is_action_just_pressed("pickup"):
+				print("Picking up object")
+				$Label.text = "Carrying: Water"
+				carrying_food = true
+				carrying_water = true
+		elif $RayCast2D.get_collider().is_in_group("yeast") and carrying_food == false:
+			if Input.is_action_just_pressed("pickup"):
+				print("Picking up object")
+				$Label.text = "Carrying: Yeast"
+				carrying_food = true
+				carrying_yeast = true
+	if velocity.x > 0 or Input.is_action_pressed("right"):
 		$RayCast2D.rotation_degrees = -90
-	elif velocity.x < 0:
+	if velocity.x < 0 or Input.is_action_pressed("left"):
 		$RayCast2D.rotation_degrees = 90
-	if velocity.y > 0:
+	if velocity.y > 0 or Input.is_action_pressed("down"):
 		$RayCast2D.rotation_degrees = 0
-	elif velocity.y < 0:
+	if velocity.y < 0 or Input.is_action_pressed("up"):
 		$RayCast2D.rotation_degrees = 180
 
 	

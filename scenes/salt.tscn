@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nl05r"]
 size = Vector2(36, 51)
 
-[node name="Salt" type="StaticBody2D" unique_id=8457333]
+[node name="Salt" type="StaticBody2D" unique_id=8457333 groups=["salt"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=269422562]
 texture = ExtResource("1_w87sg")
