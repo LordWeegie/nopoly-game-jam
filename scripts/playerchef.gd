@@ -7,6 +7,7 @@ var carrying_water = false
 var carrying_salt = false
 var carrying_yeast = false
 var carrying_food = false
+var looking_at_food = false
 
 func _ready() -> void:
 	$Label2.text = "Active Recipe: " + Global.active_food
@@ -27,6 +28,18 @@ func get_input():
 		$AnimatedSprite2D.rotation = atan2(velocity.x, velocity.y)
 
 func _physics_process(delta):
+	if $RayCast2D.is_colliding():
+		if $RayCast2D.get_collider().is_in_group("oven"):
+			pass
+
+
+	if not $RayCast2D.is_colliding():
+		print("Not colliding")
+		looking_at_food = false
+	if looking_at_food:
+		$Label4.text = "Press E to pick up"
+	if !looking_at_food:
+		$Label4.text = ""
 	if !carrying_food:
 		$Label.text = "Carrying: Nothing"
 	if Input.is_action_just_pressed("drop"):
@@ -37,29 +50,42 @@ func _physics_process(delta):
 		carrying_yeast = false
 	if $RayCast2D.is_colliding():
 		if $RayCast2D.get_collider().is_in_group("wheat") and carrying_food == false:
+			looking_at_food = true
 			if Input.is_action_just_pressed("pickup"):
 				print("Picking up object")
 				$Label.text = "Carrying: Wheat"
+				looking_at_food = false
 				carrying_food = true
 				carrying_wheat = true
 		elif $RayCast2D.get_collider().is_in_group("salt") and carrying_food == false:
+			looking_at_food = true
 			if Input.is_action_just_pressed("pickup"):
+				looking_at_food = false
 				print("Picking up object")
 				$Label.text = "Carrying: Salt"
 				carrying_food = true
 				carrying_salt = true
 		elif $RayCast2D.get_collider().is_in_group("water") and carrying_food == false:
+			looking_at_food = true
 			if Input.is_action_just_pressed("pickup"):
+				looking_at_food = false
 				print("Picking up object")
 				$Label.text = "Carrying: Water"
 				carrying_food = true
 				carrying_water = true
 		elif $RayCast2D.get_collider().is_in_group("yeast") and carrying_food == false:
+			looking_at_food = true
 			if Input.is_action_just_pressed("pickup"):
+				looking_at_food = false
 				print("Picking up object")
 				$Label.text = "Carrying: Yeast"
 				carrying_food = true
 				carrying_yeast = true
+	else:
+		looking_at_food = false
+
+
+
 	if velocity.x > 0 or Input.is_action_pressed("right"):
 		$RayCast2D.rotation_degrees = -90
 	if velocity.x < 0 or Input.is_action_pressed("left"):
