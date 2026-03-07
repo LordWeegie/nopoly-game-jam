@@ -23,6 +23,13 @@ Global="*uid://nx3lg481om"
 
 window/stretch/mode="canvas_items"
 
+[global_group]
+
+yeast=""
+salt=""
+water=""
+wheat=""
+
 [input]
 
 left={

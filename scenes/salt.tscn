@@ -1,3 +1,15 @@
 [gd_scene format=3 uid="uid://ci2ogvhhl5jhf"]
 
-[node name="Salt" type="Node2D" unique_id=2083529925]
+[ext_resource type="Texture2D" uid="uid://8j7ulym2uo5x" path="res://assets/food/baguette/salt.png" id="1_w87sg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nl05r"]
+size = Vector2(36, 51)
+
+[node name="Salt" type="StaticBody2D" unique_id=8457333]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=269422562]
+texture = ExtResource("1_w87sg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=941548670]
+position = Vector2(22, 35.5)
+shape = SubResource("RectangleShape2D_nl05r")

@@ -2,6 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://bymywqs7ecq7f" path="res://scenes/level_designs.tscn" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://x3hef6m1emoe" path="res://scenes/playerchef.tscn" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://ci2ogvhhl5jhf" path="res://scenes/salt.tscn" id="3_tefeu"]
+[ext_resource type="PackedScene" uid="uid://cn7mi76qdn6tx" path="res://scenes/water.tscn" id="4_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://hqkcyae4vedj" path="res://scenes/wheat.tscn" id="5_tipki"]
+[ext_resource type="PackedScene" uid="uid://s81tdhohafuc" path="res://scenes/yeast.tscn" id="6_85g3d"]
 
 [node name="main" type="Node2D" unique_id=635454507]
 
@@ -16,3 +20,15 @@ color = Color(0, 0, 0, 1)
 
 [node name="CharacterBody2D" parent="." unique_id=1683270934 instance=ExtResource("3_jyhfs")]
 position = Vector2(144, 121)
+
+[node name="Salt" parent="." unique_id=8457333 instance=ExtResource("3_tefeu")]
+position = Vector2(655, 31)
+
+[node name="Water" parent="." unique_id=942962112 instance=ExtResource("4_o6xl0")]
+position = Vector2(886, 66)
+
+[node name="Wheat" parent="." unique_id=2081151013 instance=ExtResource("5_tipki")]
+position = Vector2(755, 37)
+
+[node name="Yeast" parent="." unique_id=1339194058 instance=ExtResource("6_85g3d")]
+position = Vector2(666, 126)

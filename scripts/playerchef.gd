@@ -12,13 +12,25 @@ func _ready() -> void:
 
 
 func get_input():
-	var input_direction = Input.get_vector("left", "right", "up", "down")
-	velocity = input_direction * speed
+	var direction = Input.get_vector("left", "right", "up", "down")
+	velocity = direction * speed
+	if velocity.length() > 0: $AnimatedSprite2D.flip_h = true if direction.x < 0.0 else false
 	velocity = velocity.normalized() * speed
 	# Flip player as they move
 	if velocity.y > 0 or velocity.x > 0 or velocity.y < 0 or velocity.x < 0:
 		$AnimatedSprite2D.rotation = atan2(velocity.x, velocity.y)
+
 func _physics_process(delta):
+	if velocity.x > 0:
+		$RayCast2D.rotation_degrees = -90
+	elif velocity.x < 0:
+		$RayCast2D.rotation_degrees = 90
+	if velocity.y > 0:
+		$RayCast2D.rotation_degrees = 0
+	elif velocity.y < 0:
+		$RayCast2D.rotation_degrees = 180
+
+	
 	if Input.is_action_pressed("sprint"):
 		$AnimatedSprite2D.speed_scale = 3.0
 		speed = 600

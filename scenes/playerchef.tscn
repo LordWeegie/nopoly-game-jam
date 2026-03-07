@@ -146,3 +146,6 @@ theme_override_colors/font_color = Color(0, 0, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 text = "Recipe:"
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=664978197]
+target_position = Vector2(0, 70)

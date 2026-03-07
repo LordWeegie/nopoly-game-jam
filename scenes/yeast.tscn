@@ -1,3 +1,15 @@
 [gd_scene format=3 uid="uid://s81tdhohafuc"]
 
-[node name="Yeast" type="Node2D" unique_id=1015582919]
+[ext_resource type="Texture2D" uid="uid://bfwuxkverphkf" path="res://assets/food/baguette/yeast.png" id="1_kyysc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyysc"]
+size = Vector2(53, 52)
+
+[node name="Yeast" type="StaticBody2D" unique_id=1339194058 groups=["yeast"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=982699557]
+texture = ExtResource("1_kyysc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=112968204]
+position = Vector2(-14.5, 51)
+shape = SubResource("RectangleShape2D_kyysc")

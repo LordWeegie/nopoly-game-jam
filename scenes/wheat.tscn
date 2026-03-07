@@ -1,3 +1,15 @@
 [gd_scene format=3 uid="uid://hqkcyae4vedj"]
 
-[node name="Wheat" type="Node2D" unique_id=2069468454]
+[ext_resource type="Texture2D" uid="uid://oskxitx7d1rb" path="res://assets/food/baguette/wheat.png" id="1_ofiw5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6dv5"]
+size = Vector2(77.75, 63)
+
+[node name="Wheat" type="StaticBody2D" unique_id=2081151013 groups=["wheat"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1015789606]
+texture = ExtResource("1_ofiw5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1038106590]
+position = Vector2(-4.875, 27.5)
+shape = SubResource("RectangleShape2D_w6dv5")
