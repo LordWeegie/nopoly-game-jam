@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dr3v7mxlxhgp7"]
 
-[ext_resource type="PackedScene" path="res://scenes/level_designs.tscn" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://by8n1n1fvfvbw" path="res://scenes/level_designs.tscn" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://x3hef6m1emoe" path="res://scenes/playerchef.tscn" id="3_jyhfs"]
 
 [node name="main" type="Node2D" unique_id=635454507]

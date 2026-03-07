@@ -1,20 +1,98 @@
 [gd_scene format=3 uid="uid://x3hef6m1emoe"]
 
 [ext_resource type="Script" uid="uid://baxh33jp08od5" path="res://scripts/playerchef.gd" id="1_a8je8"]
-[ext_resource type="Texture2D" uid="uid://csuhi8tt2p7gq" path="res://icon.svg" id="2_igypy"]
+[ext_resource type="Texture2D" uid="uid://dwt64xn2f1fds" path="res://assets/chefman/walk/frame0000.png" id="2_pma61"]
+[ext_resource type="Texture2D" uid="uid://j7t6ttrk1epo" path="res://assets/chefman/walk/frame0001.png" id="3_mx0qq"]
+[ext_resource type="Texture2D" uid="uid://hoxgarngsty2" path="res://assets/chefman/walk/frame0002.png" id="4_2ciga"]
+[ext_resource type="Texture2D" uid="uid://buc0t7v4hi5nl" path="res://assets/chefman/walk/frame0003.png" id="5_27u7i"]
+[ext_resource type="Texture2D" uid="uid://d0wohkfkxfqnc" path="res://assets/chefman/walk/frame0004.png" id="6_2e5sx"]
+[ext_resource type="Texture2D" uid="uid://1cnuw4hxvr5q" path="res://assets/chefman/walk/frame0005.png" id="7_62etb"]
+[ext_resource type="Texture2D" uid="uid://bbjsiuarsgpkg" path="res://assets/chefman/walk/frame0006.png" id="8_h73m5"]
+[ext_resource type="Texture2D" uid="uid://4eg3v05wjskv" path="res://assets/chefman/walk/frame0007.png" id="9_nkiyk"]
+[ext_resource type="Texture2D" uid="uid://4bmqujp0jaag" path="res://assets/chefman/walk/frame0008.png" id="10_vmxcl"]
+[ext_resource type="Texture2D" uid="uid://gmu2i1gny7cp" path="res://assets/chefman/walk/frame0009.png" id="11_1oqo8"]
+[ext_resource type="Texture2D" uid="uid://bpwgv4prd7ff7" path="res://assets/chefman/walk/frame0010.png" id="12_gf1j6"]
+[ext_resource type="Texture2D" uid="uid://c2day4ge3fhx0" path="res://assets/chefman/walk/frame0011.png" id="13_x0b3n"]
+[ext_resource type="Texture2D" uid="uid://cwcj7ya0e1g2w" path="res://assets/chefman/walk/frame0012.png" id="14_lhrw3"]
+[ext_resource type="Texture2D" uid="uid://dykx1pr217w71" path="res://assets/chefman/walk/frame0013.png" id="15_hd75y"]
+[ext_resource type="Texture2D" uid="uid://c0s7lqude8wpk" path="res://assets/chefman/walk/frame0014.png" id="16_pdped"]
+[ext_resource type="Texture2D" uid="uid://b33ei0cv5bsha" path="res://assets/chefman/walk/frame0015.png" id="17_prn4k"]
+[ext_resource type="Texture2D" uid="uid://bvv4wkovh1o5m" path="res://assets/chefman/walk/frame0016.png" id="18_gowkl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(128, 127)
+size = Vector2(112, 90)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gi4sn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pma61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mx0qq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2ciga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_27u7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2e5sx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_62etb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_h73m5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nkiyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vmxcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1oqo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_gf1j6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_x0b3n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_lhrw3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_hd75y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_pdped")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_prn4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_gowkl")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 25.0
+}]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1683270934]
 script = ExtResource("1_a8je8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1121917931]
-position = Vector2(1, 0.5)
+position = Vector2(-7, -7)
 shape = SubResource("RectangleShape2D_g2els")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1555083273]
-texture = ExtResource("2_igypy")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1189865279]
 position_smoothing_enabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1239066272]
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_gi4sn")
+animation = &"walk"
+frame_progress = 0.18663071
