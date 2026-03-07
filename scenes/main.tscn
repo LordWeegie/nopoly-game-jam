@@ -5,6 +5,13 @@
 
 [node name="main" type="Node2D" unique_id=635454507]
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=272001021]
+offset_left = -1017.0
+offset_top = -674.0
+offset_right = 1703.0
+offset_bottom = 1230.0
+color = Color(0, 0, 0, 1)
+
 [node name="level designs" parent="." unique_id=1218043559 instance=ExtResource("1_sugp2")]
 
 [node name="CharacterBody2D" parent="." unique_id=1683270934 instance=ExtResource("3_jyhfs")]

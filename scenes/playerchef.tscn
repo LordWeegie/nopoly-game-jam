@@ -96,3 +96,18 @@ position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_gi4sn")
 animation = &"walk"
 frame_progress = 0.18663071
+
+[node name="Label" type="Label" parent="." unique_id=1571337356]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -102.0
+offset_top = -235.0
+offset_right = 103.0
+offset_bottom = -201.0
+grow_horizontal = 2
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+text = "Carrying: Nothing"
