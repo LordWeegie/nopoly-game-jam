@@ -1,11 +1,11 @@
-[gd_scene format=3 uid="uid://dr3v7mxlxhgp7"]
+[gd_scene format=3 uid="uid://d08v74nkutyo"]
 
-[ext_resource type="PackedScene" path="res://scenes/level_designs.tscn" id="1_sugp2"]
-[ext_resource type="PackedScene" uid="uid://x3hef6m1emoe" path="res://scenes/playerchef.tscn" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://bymywqs7ecq7f" path="res://scenes/level_designs.tscn" id="1_sugp2"]
+[ext_resource type="PackedScene" path="res://scenes/playerchef.tscn" id="3_jyhfs"]
 
 [node name="main" type="Node2D" unique_id=635454507]
 
 [node name="level designs" parent="." unique_id=1218043559 instance=ExtResource("1_sugp2")]
 
-[node name="CharacterBody2D2" parent="." unique_id=905364640 instance=ExtResource("3_jyhfs")]
-position = Vector2(141, 105)
+[node name="CharacterBody2D" parent="." unique_id=1683270934 instance=ExtResource("3_jyhfs")]
+position = Vector2(144, 121)

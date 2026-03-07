@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://by8n1n1fvfvbw"]
+[gd_scene format=4 uid="uid://bymywqs7ecq7f"]
 
 [ext_resource type="Texture2D" uid="uid://bq10kqibwtr8x" path="res://assets/tiles/wall-floorset.png" id="1_x1usc"]
 
@@ -42,6 +42,7 @@ texture = ExtResource("1_x1usc")
 9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_q8cxg"]
+uv_clipping = true
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_8a2lj")
 
