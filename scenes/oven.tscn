@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dv6cr6wse2vjs"]
+
+[ext_resource type="Texture2D" uid="uid://c2dcye7m8uta8" path="res://assets/tiles/oven.png" id="1_pgxas"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nd33l"]
+atlas = ExtResource("1_pgxas")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgb8s"]
+atlas = ExtResource("1_pgxas")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m1wc2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nd33l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgb8s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6yvy"]
+size = Vector2(34, 32)
+
+[node name="oven" type="StaticBody2D" unique_id=1210281867]
+texture_filter = 1
+scale = Vector2(3, 3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1534660902]
+position = Vector2(51, 39)
+sprite_frames = SubResource("SpriteFrames_m1wc2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=202975339]
+position = Vector2(53, 39)
+shape = SubResource("RectangleShape2D_c6yvy")
