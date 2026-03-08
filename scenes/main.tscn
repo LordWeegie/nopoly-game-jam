@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://hqkcyae4vedj" path="res://scenes/wheat.tscn" id="5_tipki"]
 [ext_resource type="PackedScene" uid="uid://s81tdhohafuc" path="res://scenes/yeast.tscn" id="6_85g3d"]
 [ext_resource type="PackedScene" uid="uid://dv6cr6wse2vjs" path="res://scenes/oven.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://l0nw11siqver" path="res://scenes/bowl.tscn" id="8_tipki"]
 
 [node name="main" type="Node2D" unique_id=635454507]
 
@@ -36,3 +37,6 @@ position = Vector2(-311, -135)
 
 [node name="CharacterBody2D" parent="." unique_id=1683270934 groups=["player"] instance=ExtResource("3_jyhfs")]
 position = Vector2(144, 121)
+
+[node name="Bowl" parent="." unique_id=2081893530 instance=ExtResource("8_tipki")]
+position = Vector2(256, 679)

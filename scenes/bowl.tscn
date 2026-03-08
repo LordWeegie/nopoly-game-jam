@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://l0nw11siqver"]
+
+[ext_resource type="Texture2D" uid="uid://bs87agacks0d4" path="res://assets/things/bowl.png" id="1_5w6ed"]
+[ext_resource type="Script" uid="uid://p45rclbld50g" path="res://scripts/bowl.gd" id="1_hnavn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnavn"]
+size = Vector2(52, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5w6ed"]
+size = Vector2(174, 89)
+
+[node name="Bowl" type="StaticBody2D" unique_id=2081893530 groups=["bowl"]]
+script = ExtResource("1_hnavn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1546959799]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_5w6ed")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=142848694]
+position = Vector2(4, 0.5)
+shape = SubResource("RectangleShape2D_hnavn")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=495125297]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2059264236]
+position = Vector2(2, -22.5)
+shape = SubResource("RectangleShape2D_5w6ed")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

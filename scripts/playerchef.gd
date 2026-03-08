@@ -8,6 +8,7 @@ var carrying_salt = false
 var carrying_yeast = false
 var carrying_food = false
 var looking_at_food = false
+@export var near_bowl = false
 
 func _ready() -> void:
 	$Label2.text = "Active Recipe: " + Global.active_food
@@ -28,26 +29,30 @@ func get_input():
 		$AnimatedSprite2D.rotation = atan2(velocity.x, velocity.y)
 
 func _physics_process(delta):
+	if near_bowl:
+		if carrying_salt or carrying_water or carrying_wheat or carrying_yeast:
+			$Label4.text = "Press E to add ingredient"
+		if Input.is_action_just_pressed("pickup"):
+			if carrying_salt or carrying_water or carrying_wheat or carrying_yeast:
+				drop_items()
+	
 	if $RayCast2D.is_colliding():
 		if $RayCast2D.get_collider().is_in_group("oven"):
 			pass
 
 
 	if not $RayCast2D.is_colliding():
-		print("Not colliding")
+
 		looking_at_food = false
 	if looking_at_food:
 		$Label4.text = "Press E to pick up"
-	if !looking_at_food:
+	if !looking_at_food and !near_bowl:
 		$Label4.text = ""
 	if !carrying_food:
 		$Label.text = "Carrying: Nothing"
 	if Input.is_action_just_pressed("drop"):
-		carrying_food = false
-		carrying_salt = false
-		carrying_wheat = false
-		carrying_water = false
-		carrying_yeast = false
+		drop_items()
+		
 	if $RayCast2D.is_colliding():
 		if $RayCast2D.get_collider().is_in_group("wheat") and carrying_food == false:
 			looking_at_food = true
@@ -109,3 +114,10 @@ func _physics_process(delta):
 		$AnimatedSprite2D.stop()
 	get_input()
 	move_and_slide()
+
+func drop_items():
+		carrying_food = false
+		carrying_salt = false
+		carrying_wheat = false
+		carrying_water = false
+		carrying_yeast = false
