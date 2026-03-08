@@ -10,6 +10,7 @@ var carrying_food = false
 var carrying_baguette_mix = false
 var looking_at_food = false
 var carrying_slop = false
+var carrying_baguette = false
 @export var oven_open = false
 @export var near_bowl = false
 
@@ -37,11 +38,16 @@ func get_input():
 		$AnimatedSprite2D.rotation = atan2(velocity.x, velocity.y)
 
 func _physics_process(delta):
+	if carrying_baguette and carrying_food:
+		$Label.text = "Carrying: Baguette"
 	if carrying_slop and carrying_food:
 		$Label.text = "Carrying: Slop"
 	if carrying_baguette_mix and oven_open:
 		if Input.is_action_just_pressed("pickup"):
 			print("Baking...") 
+			drop_items()
+			carrying_baguette = true
+			carrying_food = true
 	if carrying_baguette_mix:
 		Global.bowl_items = []
 		$Label.text = "Carrying: Baguette Mix"
@@ -164,4 +170,5 @@ func drop_items():
 		carrying_yeast = false
 		carrying_slop = false
 		carrying_baguette_mix = false
+		carrying_baguette = false
 		item_carried = ""

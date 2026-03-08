@@ -39,6 +39,9 @@ position = Vector2(-311, -135)
 
 [node name="CharacterBody2D" parent="." unique_id=1683270934 groups=["player"] instance=ExtResource("3_jyhfs")]
 position = Vector2(144, 121)
+speed = null
+oven_open = null
+near_bowl = null
 
 [node name="Bowl" parent="." unique_id=2081893530 instance=ExtResource("8_tipki")]
 position = Vector2(256, 679)
