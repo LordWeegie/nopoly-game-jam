@@ -6,6 +6,7 @@
 size = Vector2(36, 37)
 
 [node name="Wheat" type="StaticBody2D" unique_id=2081151013 groups=["wheat"]]
+scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1015789606]
 texture_filter = 1

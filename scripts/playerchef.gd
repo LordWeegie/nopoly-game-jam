@@ -25,8 +25,9 @@ func _ready() -> void:
 	$Label4.add_theme_constant_override("shadow_outline_size", 20)
 
 	if Global.active_food == "baguette":
-		$Label3.text = Global.beaguette_recipe
-
+		$Label3.text = Global.baguette_recipe
+	if Global.active_food == "coffee":
+		$Label3.text = Global.coffee_recipe
 
 func get_input():
 	var direction = Input.get_vector("left", "right", "up", "down")

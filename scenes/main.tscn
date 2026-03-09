@@ -40,9 +40,6 @@ position = Vector2(666, -16)
 [node name="oven" parent="." unique_id=1210281867 instance=ExtResource("7_o6xl0")]
 position = Vector2(-311, -135)
 
-[node name="CharacterBody2D" parent="." unique_id=1683270934 groups=["player"] instance=ExtResource("3_jyhfs")]
-position = Vector2(144, 121)
-
 [node name="Bowl" parent="." unique_id=2081893530 instance=ExtResource("8_tipki")]
 position = Vector2(256, 679)
 
@@ -52,3 +49,6 @@ rotation = -1.5707964
 
 [node name="coffee" parent="." unique_id=1548792351 instance=ExtResource("11_ya4ey")]
 position = Vector2(894, 36)
+
+[node name="CharacterBody2D" parent="." unique_id=1683270934 groups=["player"] instance=ExtResource("3_jyhfs")]
+position = Vector2(144, 121)
