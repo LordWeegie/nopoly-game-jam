@@ -22,16 +22,13 @@ func _get_input():
 		#moving using properties
 	if velocity.x > 0 or Input.is_action_pressed("right"):
 		$RayCast2D.rotation_degrees = -90
-		$AnimatedSprite2D.rotation_degrees = -90
 	if velocity.x < 0 or Input.is_action_pressed("left"):
 		$RayCast2D.rotation_degrees = 90
-		$AnimatedSprite2D.rotation_degrees = 90
 	if velocity.y > 0 or Input.is_action_pressed("down"):
 		$RayCast2D.rotation_degrees = 0
-		$AnimatedSprite2D.rotation_degrees = 0
 	if velocity.y < 0 or Input.is_action_pressed("up"):
 		$RayCast2D.rotation_degrees = 180
-		$AnimatedSprite2D.rotation_degrees = 180
+
 
 func _physics_process(delta: float) -> void:
 	_get_input()

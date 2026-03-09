@@ -16,7 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://l0nw11siqver" path="res://scenes/bowl.tscn" id="8_tipki"]
 [ext_resource type="PackedScene" uid="uid://b0m42gs38mpjt" path="res://scenes/coffee_machine.tscn" id="10_choun"]
 [ext_resource type="PackedScene" uid="uid://d1woxfcfinafg" path="res://scenes/coffee.tscn" id="11_ya4ey"]
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+[ext_resource type="PackedScene" uid="uid://bh8yc752t2ph6" path="res://scenes/waiter.tscn" id="12_eb6dy"]
+>>>>>>> parent of 0da57ad (Added some rotation fixes)
 
 [node name="main" type="Node2D" unique_id=635454507]
 script = ExtResource("1_85g3d")
@@ -58,3 +62,6 @@ position = Vector2(894, 36)
 
 [node name="CharacterBody2D" parent="." unique_id=1683270934 groups=["player"] instance=ExtResource("3_jyhfs")]
 position = Vector2(144, 121)
+
+[node name="CharacterBody2D2" parent="." unique_id=1447206207 instance=ExtResource("12_eb6dy")]
+position = Vector2(322, -87)
