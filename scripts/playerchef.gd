@@ -38,8 +38,6 @@ func get_input():
 	if velocity.length() > 0: $AnimatedSprite2D.flip_h = true if direction.x < 0.0 else false
 	velocity = velocity.normalized() * speed
 	# Flip player as they move
-	if velocity.y > 0 or velocity.x > 0 or velocity.y < 0 or velocity.x < 0:
-		$AnimatedSprite2D.rotation = atan2(velocity.x, velocity.y)
 
 func _physics_process(delta):
 	if len(Global.coffee_machine_items) >= 2:
@@ -173,12 +171,16 @@ func _physics_process(delta):
 
 	if velocity.x > 0 or Input.is_action_pressed("right"):
 		$RayCast2D.rotation_degrees = -90
+		$AnimatedSprite2D.rotation_degrees = -90
 	if velocity.x < 0 or Input.is_action_pressed("left"):
 		$RayCast2D.rotation_degrees = 90
+		$AnimatedSprite2D.rotation_degrees = 90
 	if velocity.y > 0 or Input.is_action_pressed("down"):
 		$RayCast2D.rotation_degrees = 0
+		$AnimatedSprite2D.rotation_degrees = 0
 	if velocity.y < 0 or Input.is_action_pressed("up"):
 		$RayCast2D.rotation_degrees = 180
+		$AnimatedSprite2D.rotation_degrees = 180
 
 	
 	if Input.is_action_pressed("sprint"):

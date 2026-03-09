@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://s81tdhohafuc" path="res://scenes/yeast.tscn" id="6_85g3d"]
 [ext_resource type="PackedScene" uid="uid://dv6cr6wse2vjs" path="res://scenes/oven.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://l0nw11siqver" path="res://scenes/bowl.tscn" id="8_tipki"]
+[ext_resource type="PackedScene" uid="uid://b0m42gs38mpjt" path="res://scenes/coffee_machine.tscn" id="10_choun"]
 [ext_resource type="PackedScene" uid="uid://d1woxfcfinafg" path="res://scenes/coffee.tscn" id="11_ya4ey"]
 
 [node name="main" type="Node2D" unique_id=635454507]
@@ -51,3 +52,7 @@ position = Vector2(894, 36)
 
 [node name="CharacterBody2D" parent="." unique_id=1683270934 groups=["player"] instance=ExtResource("3_jyhfs")]
 position = Vector2(144, 121)
+
+[node name="coffee_machine2" parent="." unique_id=1676423987 instance=ExtResource("10_choun")]
+position = Vector2(100.00001, 621)
+rotation = -1.5707964
