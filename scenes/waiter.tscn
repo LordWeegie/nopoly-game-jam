@@ -40,3 +40,5 @@ offset_left = -215.0
 offset_top = -23.0
 offset_right = -128.0
 text = "hello world"
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=659266388]

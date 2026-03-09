@@ -12,7 +12,7 @@ var item_carried
 
 #movement and turning!
 func _get_input():
-	var direction = Input.get_vector("left", "right", "down", "up")
+	var direction = Input.get_vector("left", "right", "up", "down")
 	velocity = direction * SPEED
 	
 	# Flip player as they move
@@ -28,7 +28,9 @@ func _get_input():
 		$RayCast2D.rotation_degrees = 0
 	if velocity.y < 0 or Input.is_action_pressed("up"):
 		$RayCast2D.rotation_degrees = 180
-		
+
+
+func _physics_process(delta: float) -> void:
 	_get_input()
 	move_and_slide()
 
