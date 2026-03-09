@@ -11,6 +11,9 @@ var carrying_baguette_mix = false
 var looking_at_food = false
 var carrying_slop = false
 var carrying_baguette = false
+var looking_at_cfm = false
+var carrying_coffee = false
+var carrying_coffee_bean = false
 @export var oven_open = false
 @export var near_bowl = false
 
@@ -37,6 +40,20 @@ func get_input():
 	# Flip player as they move
 
 func _physics_process(delta):
+	if len(Global.coffee_machine_items) >= 2:
+		if Global.coffee_machine_items.has("water") and Global.coffee_machine_items.has("coffee"):
+			carrying_coffee = true
+			carrying_food = true
+		else:
+			carrying_slop = true
+			carrying_food = true
+	if $RayCast2D.is_colliding():
+		if $RayCast2D.get_collider().is_in_group("coffee_machine"):
+			looking_at_cfm = true
+		else:
+			looking_at_cfm = false
+	else:
+		looking_at_cfm = false
 	if carrying_baguette and carrying_food:
 		$Label.text = "Carrying: Baguette"
 	if carrying_slop and carrying_food:
@@ -90,10 +107,20 @@ func _physics_process(delta):
 
 	if not $RayCast2D.is_colliding():
 		looking_at_food = false
-		
-	if looking_at_food:
+	
+	
+	if looking_at_cfm and Global.active_food == "coffee":
+		$Label4.text = "Looking at Coffee Machine"
+	if looking_at_cfm and carrying_water and Global.active_food == "coffee":
+		if Input.is_action_just_pressed("pickup"):
+			Global.coffee_machine_items.append("water")
+			print(Global.coffee_machine_items)
+			print("Ingredient in coffee machine")
+			drop_items()
+		$Label4.text = "Put ingredient in Coffee Machine?"
+	if looking_at_food and !looking_at_cfm:
 		$Label4.text = "Press E to pick up"
-	if !looking_at_food and !near_bowl and !oven_open:
+	if !looking_at_food and !near_bowl and !oven_open and !looking_at_cfm:
 		$Label4.text = ""
 	if !carrying_food:
 		$Label.text = "Carrying: Nothing"

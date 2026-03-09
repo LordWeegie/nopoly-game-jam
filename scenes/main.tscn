@@ -8,9 +8,15 @@
 [ext_resource type="PackedScene" path="res://scenes/wheat.tscn" id="5_tipki"]
 [ext_resource type="PackedScene" path="res://scenes/yeast.tscn" id="6_85g3d"]
 [ext_resource type="PackedScene" uid="uid://dv6cr6wse2vjs" path="res://scenes/oven.tscn" id="7_o6xl0"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" path="res://scenes/bowl.tscn" id="8_tipki"]
 [ext_resource type="PackedScene" path="res://scenes/coffe_machine.tscn" id="10_choun"]
 [ext_resource type="PackedScene" path="res://scenes/coffee.tscn" id="11_ya4ey"]
+=======
+[ext_resource type="PackedScene" uid="uid://l0nw11siqver" path="res://scenes/bowl.tscn" id="8_tipki"]
+[ext_resource type="PackedScene" uid="uid://b0m42gs38mpjt" path="res://scenes/coffee_machine.tscn" id="10_choun"]
+[ext_resource type="PackedScene" uid="uid://d1woxfcfinafg" path="res://scenes/coffee.tscn" id="11_ya4ey"]
+>>>>>>> Stashed changes
 
 [node name="main" type="Node2D" unique_id=635454507]
 script = ExtResource("1_85g3d")
