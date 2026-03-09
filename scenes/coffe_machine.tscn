@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b0m42gs38mpjt"]
+
+[ext_resource type="Texture2D" uid="uid://cam1ldn7maunk" path="res://assets/food/coffee/machine.png" id="1_f0pky"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0pky"]
+size = Vector2(20, 12.333334)
+
+[node name="coffee_machine" type="StaticBody2D" unique_id=383375690]
+scale = Vector2(3, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1263005881]
+texture_filter = 1
+texture = ExtResource("1_f0pky")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=761991431]
+position = Vector2(0, -0.16666667)
+shape = SubResource("RectangleShape2D_f0pky")

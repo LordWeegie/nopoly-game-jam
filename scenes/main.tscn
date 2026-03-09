@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://s81tdhohafuc" path="res://scenes/yeast.tscn" id="6_85g3d"]
 [ext_resource type="PackedScene" uid="uid://dv6cr6wse2vjs" path="res://scenes/oven.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://l0nw11siqver" path="res://scenes/bowl.tscn" id="8_tipki"]
+[ext_resource type="PackedScene" uid="uid://b0m42gs38mpjt" path="res://scenes/coffe_machine.tscn" id="10_choun"]
+[ext_resource type="PackedScene" uid="uid://d1woxfcfinafg" path="res://scenes/coffee.tscn" id="11_ya4ey"]
 
 [node name="main" type="Node2D" unique_id=635454507]
 script = ExtResource("1_85g3d")
@@ -43,3 +45,10 @@ position = Vector2(144, 121)
 
 [node name="Bowl" parent="." unique_id=2081893530 instance=ExtResource("8_tipki")]
 position = Vector2(256, 679)
+
+[node name="coffee_machine" parent="." unique_id=383375690 instance=ExtResource("10_choun")]
+position = Vector2(98.00001, 633)
+rotation = -1.5707964
+
+[node name="coffee" parent="." unique_id=1548792351 instance=ExtResource("11_ya4ey")]
+position = Vector2(894, 36)

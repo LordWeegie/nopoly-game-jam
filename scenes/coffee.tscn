@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d1woxfcfinafg"]
+
+[ext_resource type="Texture2D" uid="uid://dv42vrl0xdphv" path="res://assets/food/coffee/coffee_packet.png" id="1_tlbmd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tlbmd"]
+size = Vector2(76, 89)
+
+[node name="coffee" type="StaticBody2D" unique_id=1548792351]
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1875527900]
+texture = ExtResource("1_tlbmd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1744858877]
+position = Vector2(-8, 16.5)
+shape = SubResource("RectangleShape2D_tlbmd")
