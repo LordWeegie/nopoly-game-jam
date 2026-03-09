@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5exy24hybneg"
-path="res://.godot/imported/yeast.png-856cd69ef1cdf039e53444be6b5b7f10.ctex"
+uid="uid://be7ovlvykbjce"
+path="res://.godot/imported/water.png-1af166903ea8d079f7fed8b1e8ab5672.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/food/baguette/yeast.png"
-dest_files=["res://.godot/imported/yeast.png-856cd69ef1cdf039e53444be6b5b7f10.ctex"]
+source_file="res://assets/food/baguette/water.png"
+dest_files=["res://.godot/imported/water.png-1af166903ea8d079f7fed8b1e8ab5672.ctex"]
 
 [params]
 

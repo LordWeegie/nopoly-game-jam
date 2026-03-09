@@ -23,16 +23,16 @@ color = Color(0, 0, 0, 1)
 [node name="level designs" parent="." unique_id=1218043559 instance=ExtResource("1_sugp2")]
 
 [node name="Salt" parent="." unique_id=8457333 instance=ExtResource("3_tefeu")]
-position = Vector2(655, 31)
+position = Vector2(804, 3)
 
 [node name="Water" parent="." unique_id=942962112 instance=ExtResource("4_o6xl0")]
-position = Vector2(886, 66)
+position = Vector2(425, 686)
 
 [node name="Wheat" parent="." unique_id=2081151013 instance=ExtResource("5_tipki")]
-position = Vector2(755, 37)
+position = Vector2(741, 37)
 
 [node name="Yeast" parent="." unique_id=1339194058 instance=ExtResource("6_85g3d")]
-position = Vector2(666, 126)
+position = Vector2(666, -16)
 
 [node name="oven" parent="." unique_id=1210281867 instance=ExtResource("7_o6xl0")]
 position = Vector2(-311, -135)

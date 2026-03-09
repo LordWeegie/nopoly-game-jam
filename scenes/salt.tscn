@@ -1,15 +1,19 @@
 [gd_scene format=3 uid="uid://ci2ogvhhl5jhf"]
 
-[ext_resource type="Texture2D" uid="uid://8j7ulym2uo5x" path="res://assets/food/baguette/salt.png" id="1_w87sg"]
+[ext_resource type="Texture2D" uid="uid://c6t62hlhohxti" path="res://assets/food/baguette/salt.png" id="1_w87sg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nl05r"]
-size = Vector2(36, 51)
+size = Vector2(24, 22)
 
 [node name="Salt" type="StaticBody2D" unique_id=8457333 groups=["salt"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=269422562]
+texture_filter = 1
+position = Vector2(23, 36)
+scale = Vector2(3, 3)
 texture = ExtResource("1_w87sg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=941548670]
-position = Vector2(22, 35.5)
+position = Vector2(23, 36)
+scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_nl05r")
