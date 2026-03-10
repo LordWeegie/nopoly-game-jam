@@ -14,6 +14,8 @@ var carrying_baguette = false
 var looking_at_cfm = false
 var carrying_coffee = false
 var carrying_coffee_bean = false
+@export var loading_bar1 : Node2D
+@export var loading_bar2 : Node2D
 @export var oven_open = false
 @export var near_bowl = false
 
@@ -37,11 +39,22 @@ func get_input():
 	velocity = direction * speed
 	if velocity.length() > 0: $AnimatedSprite2D.flip_h = true if direction.x < 0.0 else false
 	velocity = velocity.normalized() * speed
-	# Flip player as they move
 
 func _physics_process(delta):
+	if carrying_coffee_bean:
+		$Label.text = "Carrying: Coffee Bean"
+	if $RayCast2D.is_colliding():
+		if $RayCast2D.get_collider().is_in_group("coffee_bean") and !carrying_food:
+			looking_at_food = true
+			if Input.is_action_just_pressed("pickup"):
+				print("burger")
+				carrying_coffee_bean = true
+				carrying_food = true
 	if len(Global.coffee_machine_items) >= 2:
 		if Global.coffee_machine_items.has("water") and Global.coffee_machine_items.has("coffee"):
+			if !carrying_coffee:
+				loading_bar2.animation_playing = true
+			await $"../Loadingbar2".animation_finished
 			carrying_coffee = true
 			carrying_food = true
 		else:
@@ -61,8 +74,10 @@ func _physics_process(delta):
 	if carrying_baguette_mix and oven_open:
 		$Label4.text = "Press E to bake Baguette Mix"
 		if Input.is_action_just_pressed("pickup"):
+			loading_bar1.animation_playing = true
 			print("Baking...") 
 			drop_items()
+			await $"../Loadingbar/AnimatedSprite2D".animation_finished
 			carrying_baguette = true
 			carrying_food = true
 	if carrying_baguette_mix:
@@ -109,21 +124,29 @@ func _physics_process(delta):
 		looking_at_food = false
 	
 	
-	if looking_at_cfm and Global.active_food == "coffee":
-		$Label4.text = "Looking at Coffee Machine"
 	if looking_at_cfm and carrying_water and Global.active_food == "coffee":
+		$Label4.text = "Put ingredient in Coffee Machine"
 		if Input.is_action_just_pressed("pickup"):
 			Global.coffee_machine_items.append("water")
+			Global.needed_coffee_machine_items.append("water")
 			print(Global.coffee_machine_items)
 			print("Ingredient in coffee machine")
 			drop_items()
+	if looking_at_cfm and carrying_coffee_bean and Global.active_food == "coffee":
 		$Label4.text = "Put ingredient in Coffee Machine?"
+		if Input.is_action_just_pressed("pickup"):
+			Global.coffee_machine_items.append("coffee")
+			print(Global.coffee_machine_items)
+			print("Ingredient in coffee machine")
+			drop_items()
 	if looking_at_food and !looking_at_cfm:
 		$Label4.text = "Press E to pick up"
 	if !looking_at_food and !near_bowl and !oven_open and !looking_at_cfm:
 		$Label4.text = ""
 	if !carrying_food:
 		$Label.text = "Carrying: Nothing"
+	if carrying_coffee and carrying_food:
+		$Label.text = "Carrying: Coffee"
 	if Input.is_action_just_pressed("drop"):
 		drop_items()
 		
@@ -208,4 +231,6 @@ func drop_items():
 		carrying_slop = false
 		carrying_baguette_mix = false
 		carrying_baguette = false
+		carrying_coffee = false
+		carrying_coffee_bean = false
 		item_carried = ""

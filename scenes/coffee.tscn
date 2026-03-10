@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tlbmd"]
 size = Vector2(76, 89)
 
-[node name="coffee" type="StaticBody2D" unique_id=1548792351]
+[node name="coffee" type="StaticBody2D" unique_id=1548792351 groups=["coffee_bean"]]
 scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1875527900]

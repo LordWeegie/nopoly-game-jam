@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://l0nw11siqver" path="res://scenes/bowl.tscn" id="8_tipki"]
 [ext_resource type="PackedScene" uid="uid://b0m42gs38mpjt" path="res://scenes/coffee_machine.tscn" id="10_choun"]
 [ext_resource type="PackedScene" uid="uid://d1woxfcfinafg" path="res://scenes/coffee.tscn" id="11_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://bhldqkbkx7xhg" path="res://scenes/loadingbar.tscn" id="12_eb6dy"]
 
 [node name="main" type="Node2D" unique_id=635454507]
 script = ExtResource("1_85g3d")
@@ -43,16 +44,25 @@ position = Vector2(-311, -135)
 [node name="Bowl" parent="." unique_id=2081893530 instance=ExtResource("8_tipki")]
 position = Vector2(256, 679)
 
-[node name="coffee_machine" parent="." unique_id=383375690]
-position = Vector2(98.00001, 633)
-rotation = -1.5707964
-
 [node name="coffee" parent="." unique_id=1548792351 instance=ExtResource("11_ya4ey")]
 position = Vector2(894, 36)
 
-[node name="CharacterBody2D" parent="." unique_id=1683270934 groups=["player"] instance=ExtResource("3_jyhfs")]
+[node name="CharacterBody2D" parent="." unique_id=1683270934 node_paths=PackedStringArray("loading_bar1", "loading_bar2") groups=["player"] instance=ExtResource("3_jyhfs")]
 position = Vector2(144, 121)
+loading_bar1 = NodePath("../Loadingbar")
+loading_bar2 = NodePath("../Loadingbar2")
 
-[node name="coffee_machine2" parent="." unique_id=1676423987 instance=ExtResource("10_choun")]
+[node name="coffee_machine" parent="." unique_id=1676423987 instance=ExtResource("10_choun")]
 position = Vector2(100.00001, 621)
 rotation = -1.5707964
+
+[node name="Loadingbar" parent="." unique_id=1633092836 instance=ExtResource("12_eb6dy")]
+position = Vector2(-172, -19)
+rotation = -1.5707964
+
+[node name="Loadingbar2" parent="." unique_id=1421373656 instance=ExtResource("12_eb6dy")]
+position = Vector2(98.000015, 621)
+rotation = -1.5707964
+
+[editable path="Loadingbar"]
+[editable path="Loadingbar2"]
