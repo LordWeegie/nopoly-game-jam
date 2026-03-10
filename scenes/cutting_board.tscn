@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://d22fkxcpwph7b"]
+
+[ext_resource type="Texture2D" uid="uid://1x51ssepblj8" path="res://assets/food/crossiant/chopping_board.png" id="1_m4ftk"]
+[ext_resource type="Script" uid="uid://crg4g1qa7lyjq" path="res://scripts/cutting_board.gd" id="1_oihve"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oihve"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4ftk"]
+size = Vector2(52, 46)
+
+[node name="cutting_board" type="StaticBody2D" unique_id=1154817377]
+scale = Vector2(2, 2)
+script = ExtResource("1_oihve")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1148876876]
+texture = ExtResource("1_m4ftk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=743770709]
+shape = SubResource("RectangleShape2D_oihve")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=569500955]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=40112652]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_m4ftk")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

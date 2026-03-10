@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bhldqkbkx7xhg" path="res://scenes/loadingbar.tscn" id="12_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://bd3y5precvqcg" path="res://scenes/butter.tscn" id="13_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://cb81q4r22h4ux" path="res://scenes/milk.tscn" id="14_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://d22fkxcpwph7b" path="res://scenes/cutting_board.tscn" id="15_jkv2x"]
 
 [node name="main" type="Node2D" unique_id=635454507]
 script = ExtResource("1_85g3d")
@@ -71,6 +72,9 @@ position = Vector2(914, 176)
 position = Vector2(144, 121)
 loading_bar1 = NodePath("../Loadingbar")
 loading_bar2 = NodePath("../Loadingbar2")
+
+[node name="cutting_board" parent="." unique_id=1154817377 instance=ExtResource("15_jkv2x")]
+position = Vector2(533, 672)
 
 [editable path="Loadingbar"]
 [editable path="Loadingbar2"]

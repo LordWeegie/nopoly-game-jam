@@ -21,6 +21,7 @@ var carrying_croissant_dough = false
 @export var loading_bar2 : Node2D
 @export var oven_open = false
 @export var near_bowl = false
+@export var near_cutting_board = false
 var can_move = true
 
 var item_carried
@@ -141,6 +142,9 @@ func _physics_process(delta):
 	if not $RayCast2D.is_colliding():
 		looking_at_food = false
 	
+	if near_cutting_board and carrying_croissant_dough:
+		print("near cutting board")
+		$Label4.text = "Press E to cut Croissant Dough"
 	
 	if looking_at_cfm and carrying_water and Global.active_food == "coffee":
 		$Label4.text = "Put ingredient in Coffee Machine"
