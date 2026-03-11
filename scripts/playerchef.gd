@@ -67,7 +67,7 @@ func _physics_process(delta):
 			carrying_food = true
 			can_move = true
 	if carrying_coffee_bean:
-		$Label.text = "Carrying: Coffee Bean"
+		$Label.text = "Carrying: Coffee Packet"
 	if $RayCast2D.is_colliding():
 		if $RayCast2D.get_collider().is_in_group("coffee_bean") and !carrying_food:
 			looking_at_food = true
