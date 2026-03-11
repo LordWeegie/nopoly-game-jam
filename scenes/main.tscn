@@ -39,7 +39,7 @@ rotation = 3.1415927
 position = Vector2(741, 37)
 
 [node name="Yeast" parent="." unique_id=1339194058 instance=ExtResource("6_85g3d")]
-position = Vector2(666, -16)
+position = Vector2(691, -62)
 
 [node name="oven" parent="." unique_id=1210281867 instance=ExtResource("7_o6xl0")]
 position = Vector2(-311, -135)
