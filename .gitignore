@@ -6,6 +6,7 @@
 .import/
 export.cfg
 export_credentials.cfg
+.godot/
 
 # Imported translations (automatically generated from CSV files)
 *.translation
@@ -14,3 +15,6 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
+*.x86_64
+*_.dmg
+*_.exe
