@@ -41,13 +41,13 @@ func _physics_process(delta: float) -> void:
 func _pickup():
 	#lable for baguette collected!
 	if carrying_baguette:
-		$Lable1.Text = "baguette aquired"
+		$Lable1.text = "baguette aquired"
 	else:
-		$Lable1.Text = "obtained none"
+		$Lable1.text = "obtained none"
 	
 	#lable for coffee collected!
 	if carrying_coffee:
-		$Lable1.Text = "carrying coffee"
+		$Lable1.text = "carrying coffee"
 	else:
 		$Lable1.text = "obtained none"
 	

@@ -43,6 +43,9 @@ func _physics_process(delta: float) -> void:
 	_get_input()
 	move_and_slide()
 
+func _ready():
+	$Lable1.add_theme_color_override(20)
+	$Lable1.modulate = Color.CADET_BLUE
 func _pickup():
 	#lable for baguette collected!
 	if carrying_baguette:
@@ -79,6 +82,8 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_l5cu5"]
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1447206207]
 script = SubResource("GDScript_l5cu5")
 
@@ -97,7 +102,7 @@ sprite_frames = SubResource("SpriteFrames_ge1nj")
 offset_left = -215.0
 offset_top = -23.0
 offset_right = -128.0
-text = "hello world"
+label_settings = SubResource("LabelSettings_l5cu5")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=659266388]
 
