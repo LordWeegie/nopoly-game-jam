@@ -14,11 +14,11 @@ size = Vector2(595, 15)
 script = ExtResource("1_cs82u")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1123167708]
-offset_left = -175.0
-offset_top = -60.0
-offset_right = -111.80371
-offset_bottom = -20.0
-scale = Vector2(8.4973345, 5.4786005)
+offset_left = -363.0
+offset_top = -343.0
+offset_right = -299.8037
+offset_bottom = -303.0
+scale = Vector2(16.896711, 370.2509)
 color = Color(0, 0, 0, 1)
 
 [node name="CroissantTile" parent="." unique_id=993946252 instance=ExtResource("1_5bna3")]
