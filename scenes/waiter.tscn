@@ -3,7 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://b31qpdfgqolao" path="res://assets/tested.webp" id="2_4g130"]
 
 [sub_resource type="GDScript" id="GDScript_l5cu5"]
-script/source = "extends CharacterBody2D
+script/source = "#player model
+extends CharacterBody2D
 
 #speed
 const SPEED = 400
@@ -42,17 +43,18 @@ func _get_input():
 func _physics_process(delta: float) -> void:
 	_get_input()
 	move_and_slide()
+	_pickup()
 	
 func _pickup():
 	#lable for baguette collected!
 	if carrying_baguette:
-		$Lable1.Text = \"baguette aquired\"
+		$Lable1.text = \"baguette aquired\"
 	else:
-		$Lable1.Text = \"obtained none\"
+		$Lable1.text = \"obtained none\"
 	
 	#lable for coffee collected!
 	if carrying_coffee:
-		$Lable1.Text = \"carrying coffee\"
+		$Lable1.text = \"carrying coffee\"
 	else:
 		$Lable1.text = \"obtained none\"
 	
@@ -100,6 +102,7 @@ offset_left = -215.0
 offset_top = -23.0
 offset_right = -128.0
 theme_override_colors/font_color = Color(0.4479097, 0.71583873, 0.81669134, 1)
+text = "world"
 label_settings = SubResource("LabelSettings_l5cu5")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=659266388]
