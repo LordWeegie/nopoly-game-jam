@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dhm5cd30k2f0p" path="res://scenes/customer.tscn" id="2_cs82u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bna3"]
-size = Vector2(272, 15)
+size = Vector2(595, 15)
 
 [node name="Node2D" type="Node2D" unique_id=1010147544]
 script = ExtResource("1_cs82u")
@@ -13,7 +13,7 @@ script = ExtResource("1_cs82u")
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1123167708]
 offset_left = -175.0
 offset_top = -60.0
-offset_right = -135.0
+offset_right = -111.80371
 offset_bottom = -20.0
 scale = Vector2(8.4973345, 5.4786005)
 color = Color(0, 0, 0, 1)
@@ -28,7 +28,7 @@ position = Vector2(-64, 2)
 [node name="Area2D" type="Area2D" parent="." unique_id=1430758612]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=333719252]
-position = Vector2(7, 56.5)
+position = Vector2(47.5, 56.5)
 shape = SubResource("RectangleShape2D_5bna3")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

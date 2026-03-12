@@ -20,6 +20,7 @@ var carrying_croissant_dough = false
 var carrying_cut_croissant_dough = false
 var carrying_croissant = false
 var looking_at_delivery_point1 = false
+@onready var timer : Timer = $Timer
 @export var loading_bar1 : Node2D
 @export var loading_bar2 : Node2D
 @export var loading_bar3 : Node2D
@@ -33,6 +34,7 @@ var item_carried
 func _ready() -> void:
 	$Label.text = "Carrying: Nothing"
 	$Label2.text = "Active Recipe: " + Global.active_food.capitalize()
+	$Label5.add_theme_constant_override("shadow_outline_size", 20)
 	$Label.add_theme_constant_override("shadow_outline_size", 20)
 	$Label2.add_theme_constant_override("shadow_outline_size", 20)
 	$Label3.add_theme_constant_override("shadow_outline_size", 20)
@@ -51,6 +53,13 @@ func get_input():
 	velocity = velocity.normalized() * speed
 
 func _physics_process(delta):
+	$Label5.text = "Time till restart: " + str(int(timer.time_left))
+	if timer.is_stopped():
+		print("Starting timer")
+		timer.start(20)
+	if timer.time_left < 0.1:
+		print("!!!")
+		get_tree().reload_current_scene()
 	if $RayCast2D.is_colliding():
 		if $RayCast2D.get_collider().is_in_group("delivery_point1"):
 			if carrying_baguette or carrying_croissant or carrying_coffee:

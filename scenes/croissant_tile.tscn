@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bko3h7uxk6ss6"]
 
 [ext_resource type="Texture2D" uid="uid://bt1kcw84uip53" path="res://assets/tiles/croissant.png" id="1_ftaw6"]
+[ext_resource type="Texture2D" uid="uid://dxeju40s8v2h6" path="res://assets/tiles/croissant2.png" id="2_on3yg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_on3yg"]
 texture = ExtResource("1_ftaw6")
@@ -13,9 +14,20 @@ texture = ExtResource("1_ftaw6")
 1:11/0/physics_layer_0/polygon_4/points = PackedVector2Array(17.868496, -36.44767, 21.726467, -36.346146, 21.624943, -38.07208, 17.868496, -38.07208)
 1:11/0/physics_layer_0/polygon_5/points = PackedVector2Array(26.079515, -25.36008, 48.113243, -20.392366, 69.4615, -9.877552, 83.16263, 1.2745228, 94.314705, 11.789337, 94.951965, 21.02963, 86.9862, 38.55432, 25.49046, 38.55432)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b1whk"]
+texture = ExtResource("2_on3yg")
+0:11/size_in_atlas = Vector2i(13, 5)
+0:11/next_alternative_id = 3
+0:11/0 = 0
+0:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-84, 37, -90, 18, -88, 1, -64, -22, -51, -33, -20, -37, -4, -42, 11, -34, 38.9487, -25.401325, 97.65398, -4.515789, 104, 16, 93.70266, 40.642117)
+0:11/1 = 1
+0:11/2 = 2
+0:11/2/texture_origin = Vector2i(3, 0)
+
 [sub_resource type="TileSet" id="TileSet_b1whk"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_on3yg")
+sources/1 = SubResource("TileSetAtlasSource_b1whk")
 
 [node name="CroissantTile" type="TileMap" unique_id=993946252]
 tile_set = SubResource("TileSet_b1whk")
