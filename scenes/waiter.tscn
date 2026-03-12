@@ -11,10 +11,14 @@ const SPEED = 400
 
 #holding
 var carrying_food = false
-var carrying_baguette = false
-var carrying_coffee = false
 
-var item_carried
+var item_carried = false
+
+# Ready function
+func _ready() -> void:
+	if len(Global.active_food) > 0:
+		carrying_food = true
+		item_carried = Global.active_food
 
 #movement and turning!
 func _get_input():
@@ -41,23 +45,13 @@ func _get_input():
 
 func _pickup():
 	#lable for baguette collected!
-	if carrying_baguette:
-		$Lable1.text = \"baguette aquired\"
-	else:
-		$Lable1.text = \"obtained none\"
-	
-	#lable for coffee collected!
-	if carrying_coffee:
-		$Lable1.text = \"carrying coffee\"
-	else:
-		$Lable1.text = \"obtained none\"
+	if carrying_food:
+		$Lable1.text = \"Carrying: \" + Global.active_food
 	
 	#lable for all time
 	if not carrying_food:
 		$Lable1.text = \"obtained none\"
-	
-func _ready() -> void:
-	print(Global.active_food)
+
 
 func _physics_process(delta: float) -> void:
 	_get_input()
@@ -85,6 +79,8 @@ animations = [{
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_l5cu5"]
+shadow_size = 7
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1447206207]
 script = SubResource("GDScript_l5cu5")
@@ -105,8 +101,10 @@ modulate = Color(0.17371473, 0.34647405, 0.60365796, 1)
 offset_left = -215.0
 offset_top = -23.0
 offset_right = -128.0
-theme_override_colors/font_color = Color(0.4479097, 0.71583873, 0.81669134, 1)
-theme_override_colors/font_shadow_color = Color(0.17785347, 0.17785347, 0.17785347, 0)
+theme_type_variation = &"HeaderSmall"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
 text = "world"
 label_settings = SubResource("LabelSettings_l5cu5")
