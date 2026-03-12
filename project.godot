@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Nopoly game jam"
-run/main_scene="uid://d08v74nkutyo"
+run/main_scene="uid://kp35ylbkoomb"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

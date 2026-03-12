@@ -39,12 +39,6 @@ func _get_input():
 		$RayCast2D.rotation_degrees = 180
 		$AnimatedSprite2D.rotation_degrees = 180
 
-
-func _physics_process(delta: float) -> void:
-	_get_input()
-	move_and_slide()
-	_pickup()
-	
 func _pickup():
 	#lable for baguette collected!
 	if carrying_baguette:
@@ -61,6 +55,11 @@ func _pickup():
 	#lable for all time
 	if not carrying_food:
 		$Lable1.text = \"obtained none\"
+
+func _physics_process(delta: float) -> void:
+	_get_input()
+	move_and_slide()
+	_pickup()
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7m2g"]
@@ -98,10 +97,13 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_ge1nj")
 
 [node name="Lable1" type="Label" parent="." unique_id=27034045]
+modulate = Color(0.17371473, 0.34647405, 0.60365796, 1)
 offset_left = -215.0
 offset_top = -23.0
 offset_right = -128.0
 theme_override_colors/font_color = Color(0.4479097, 0.71583873, 0.81669134, 1)
+theme_override_colors/font_shadow_color = Color(0.17785347, 0.17785347, 0.17785347, 0)
+theme_override_font_sizes/font_size = 20
 text = "world"
 label_settings = SubResource("LabelSettings_l5cu5")
 
