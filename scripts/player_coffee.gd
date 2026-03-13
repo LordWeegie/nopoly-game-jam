@@ -3,7 +3,9 @@ extends CharacterBody3D
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
+var kills : int = 0
 
+@export var health = 100
 var mouse_sens = 0.007
 var camera_anglev=0
 
@@ -18,11 +20,22 @@ func _input(event):
 
 
 func _physics_process(delta: float) -> void:
+	print(health)
+	if health < 1:
+		
+		print("You died!!!")
+		get_tree().reload_current_scene()
+	if kills >= 10:
+		print("You won!")
+		get_tree().change_scene_to_file("res://scenes/main.tscn")
 	if Input.is_action_just_pressed("shoot"):
 		if !$AnimationPlayer.is_playing():
 			$AnimationPlayer.play("shoot")
 			if $RayCast3D.is_colliding():
 				if $RayCast3D.get_collider().is_in_group("enemy"):
+					kills += 1
+					print(kills)
+					$Camera/Label3D.text = "Kills: " + str(kills) + "/10"
 					$RayCast3D.get_collider().queue_free()
 	
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -63,7 +76,6 @@ func _unhandled_input(event):
 	if _mouse_input :
 		_rotation_input = -event.relative.x * MOUSE_SENSITIVITY
 		_tilt_input = -event.relative.y * MOUSE_SENSITIVITY
-		print(Vector2(_rotation_input,_tilt_input))
 
 @export var TILT_LOWER_LIMIT := deg_to_rad(-90.0)
 @export var TILT_UPPER_LIMIT := deg_to_rad(90.0)

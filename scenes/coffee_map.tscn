@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bmuro73tr3ttg"]
+
+[ext_resource type="PackedScene" uid="uid://cbao8cmf73tgu" path="res://assets/doom_level/level.glb" id="1_4dfw4"]
+[ext_resource type="PackedScene" uid="uid://d3lhd632cgfn6" path="res://assets/doom_level/levelnocol.glb" id="2_mr1gk"]
+
+[node name="level" unique_id=1187279212 instance=ExtResource("1_4dfw4")]
+
+[node name="levelnocol" parent="." index="1" unique_id=1054802435 instance=ExtResource("2_mr1gk")]

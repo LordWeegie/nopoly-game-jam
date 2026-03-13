@@ -10,10 +10,13 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_3iy1b"]
 size = Vector3(4.0289307, 1, 7.2989807)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_rb2l7"]
+size = Vector3(1, 1.128418, 1)
+
 [node name="enemy" type="CharacterBody3D" unique_id=742273710 groups=["enemy"]]
 script = ExtResource("1_3iy1b")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=928813310 groups=["enemy"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=928813310]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33041978, 0)
 shape = SubResource("CapsuleShape3D_3iy1b")
 
@@ -22,6 +25,7 @@ billboard = 1
 texture = ExtResource("1_2or5l")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1720901444]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2116124111]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
@@ -33,6 +37,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.8537025)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2" unique_id=1787449695]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07635498, 0, 1.4420714)
 shape = SubResource("BoxShape3D_3iy1b")
+
+[node name="Area3D3" type="Area3D" parent="." unique_id=1575488661 groups=["enemy"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D3" unique_id=1696033128]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.064208984, 0)
+shape = SubResource("BoxShape3D_rb2l7")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="Area3D2" to="." method="_on_area_3d_2_body_entered"]

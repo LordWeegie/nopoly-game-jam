@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@onready var player : CharacterBody3D = $"../player"
+@onready var player : CharacterBody3D = $"../../player"
 var player_found = false
 
 @export var speed = 2
@@ -28,7 +28,8 @@ func _physics_process(delta: float) -> void:
 	
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
-		get_tree().reload_current_scene()
+		body.health -= 30
+		await get_tree().create_timer(2).timeout
 
 
 func _on_area_3d_2_body_entered(body: Node3D) -> void:

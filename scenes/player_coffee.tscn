@@ -81,5 +81,9 @@ transform = Transform3D(0.1, 0, 0, 0, 0.092050485, -0.039073113, 0, 0.039073113,
 
 [node name="Camera" type="Camera3D" parent="." unique_id=868295902]
 
+[node name="Label3D" type="Label3D" parent="Camera" unique_id=754901142]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5378865, -1.6760767)
+text = "Kills: 0/10"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1474287560]
 libraries/ = SubResource("AnimationLibrary_va1ek")

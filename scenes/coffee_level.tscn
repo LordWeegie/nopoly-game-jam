@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://n106gbxeyfi0"]
 
 [ext_resource type="PackedScene" uid="uid://b65bbjh0qmdeg" path="res://scenes/player_coffee.tscn" id="1_17jqh"]
+[ext_resource type="Script" uid="uid://dspq0wac8pffr" path="res://scripts/coffee_level.gd" id="1_j8iy6"]
 [ext_resource type="PackedScene" uid="uid://dlca642a8f3ed" path="res://scenes/enemy_coffee.tscn" id="2_xx74y"]
+[ext_resource type="PackedScene" uid="uid://bmuro73tr3ttg" path="res://scenes/coffee_map.tscn" id="3_j8iy6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_17jqh"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0.18628946, 0.05499184, 0, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
 [sub_resource type="Sky" id="Sky_xx74y"]
@@ -16,15 +19,13 @@ sky = SubResource("Sky_xx74y")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="BoxMesh" id="BoxMesh_xx74y"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_51x6w"]
+size = Vector3(73.441284, 1, 123.58838)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_j8iy6"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_17jqh"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_j8iy6"]
-
-[node name="coffee_level" type="Node3D" unique_id=1757119941]
+[node name="coffee_level" type="Node3D" unique_id=1757119941 node_paths=PackedStringArray("spawns")]
+script = ExtResource("1_j8iy6")
+spawns = [NodePath("spawn"), NodePath("spawn2"), NodePath("spawn2"), NodePath("spawn3"), NodePath("spawn4"), NodePath("spawn5"), NodePath("spawn6"), NodePath("spawn7")]
+enemy_scene = ExtResource("2_xx74y")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1408383323]
 environment = SubResource("Environment_j8iy6")
@@ -33,40 +34,43 @@ environment = SubResource("Environment_j8iy6")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=542596208]
-transform = Transform3D(7.447731, 0, 0, 0, 1, 0, 0, 0, 10.023965, 0, 0, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1178108395]
-transform = Transform3D(2.5709758, 0, 0, 0, 1, 0, 0, 0, 2.4860168, 0, 0, 0)
-mesh = SubResource("BoxMesh_xx74y")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1128422942]
-transform = Transform3D(4.226905, 0, 0, 0, 1, 0, 0, 0, 2.7834852, 0, 0, 0)
-shape = SubResource("BoxShape3D_j8iy6")
-
 [node name="player" parent="." unique_id=1632048871 instance=ExtResource("1_17jqh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.33519, 1.292584, -7.123048)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.33519, 3.9599729, -3.4225879)
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=699367089 groups=["enemy"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5868015, -2.6937876)
+[node name="level" parent="." unique_id=1187279212 instance=ExtResource("3_j8iy6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.90658, 0, -3.8281279)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=410158907]
-shape = SubResource("BoxShape3D_17jqh")
+[node name="spawn" type="Node3D" parent="." unique_id=1853227851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2410696, 3.464517, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2" unique_id=832804852]
-mesh = SubResource("BoxMesh_j8iy6")
+[node name="spawn2" type="Node3D" parent="." unique_id=762400850]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9779477, 3.2623568, 15.913996)
 
-[node name="Node3D" parent="." unique_id=469270636 instance=ExtResource("2_xx74y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8148303, 1.1400009, -2.5047235)
+[node name="spawn3" type="Node3D" parent="." unique_id=1145633059]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.861632, 5.7765465, 18.762941)
 
-[node name="enemy" parent="." unique_id=742273710 instance=ExtResource("2_xx74y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.739242, 0, 2.4002905)
+[node name="spawn4" type="Node3D" parent="." unique_id=1327157370]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9328127, 3.8844957, 0)
 
-[node name="enemy2" parent="." unique_id=1879217451 instance=ExtResource("2_xx74y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4697465, 1.14, 4.7720146)
+[node name="spawn5" type="Node3D" parent="." unique_id=704795417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.942643, 2.7571285, 5.717683)
 
-[node name="enemy3" parent="." unique_id=922918585 instance=ExtResource("2_xx74y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8378892, 1.14, 4.306687)
+[node name="spawn6" type="Node3D" parent="." unique_id=497564798]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6402283, 4.1053114, 19.045837)
 
-[node name="enemy4" parent="." unique_id=650878983 instance=ExtResource("2_xx74y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.51975536, 0, 5.894468)
+[node name="spawn7" type="Node3D" parent="." unique_id=992719468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9157653, 4.4376593, 17.735407)
+
+[node name="Timer" type="Timer" parent="." unique_id=931086973]
+
+[node name="Enemys" type="Node3D" parent="." unique_id=81232680]
+
+[node name="coffee_touched" type="Area3D" parent="." unique_id=234307783]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0755181, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="coffee_touched" unique_id=741120611]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.03363, 1.2312813, -12.16544)
+shape = SubResource("BoxShape3D_51x6w")
+
+[connection signal="area_entered" from="coffee_touched" to="." method="_on_coffee_touched_area_entered"]
+[connection signal="body_entered" from="coffee_touched" to="." method="_on_coffee_touched_body_entered"]
