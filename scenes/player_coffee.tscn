@@ -83,7 +83,17 @@ transform = Transform3D(0.1, 0, 0, 0, 0.092050485, -0.039073113, 0, 0.039073113,
 
 [node name="Label3D" type="Label3D" parent="Camera" unique_id=754901142]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5378865, -1.6760767)
-text = "Kills: 0/10"
+text = "Kills: 0/5"
+
+[node name="Label3D2" type="Label3D" parent="Camera" unique_id=1667515175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7951541, -1.6760767)
+modulate = Color(1, 0, 0, 1)
+text = "HP: 100"
+
+[node name="Label3D3" type="Label3D" parent="Camera" unique_id=1502193747]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.98556757, -1.6760767)
+modulate = Color(0, 0, 1, 1)
+text = "Time till enemy spawn: "
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1474287560]
 libraries/ = SubResource("AnimationLibrary_va1ek")

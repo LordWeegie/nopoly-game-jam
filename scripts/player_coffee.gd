@@ -20,12 +20,13 @@ func _input(event):
 
 
 func _physics_process(delta: float) -> void:
+	$Camera/Label3D3.text = "Time till enemy spawns: " + str(int($"../Timer".time_left))
+	$Camera/Label3D2.text = "HP: " + str(health)
 	print(health)
 	if health < 1:
-		
 		print("You died!!!")
 		get_tree().reload_current_scene()
-	if kills >= 10:
+	if kills >= 5:
 		print("You won!")
 		get_tree().change_scene_to_file("res://scenes/main.tscn")
 	if Input.is_action_just_pressed("shoot"):
@@ -35,7 +36,7 @@ func _physics_process(delta: float) -> void:
 				if $RayCast3D.get_collider().is_in_group("enemy"):
 					kills += 1
 					print(kills)
-					$Camera/Label3D.text = "Kills: " + str(kills) + "/10"
+					$Camera/Label3D.text = "Kills: " + str(kills) + "/5"
 					$RayCast3D.get_collider().queue_free()
 	
 	if Input.is_action_just_pressed("ui_cancel"):

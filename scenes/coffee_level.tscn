@@ -72,5 +72,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0755181, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.03363, 1.2312813, -12.16544)
 shape = SubResource("BoxShape3D_51x6w")
 
+[node name="player_spawn" type="Node3D" parent="." unique_id=1830567524]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.33519, 3.9599729, -3.4225879)
+
 [connection signal="area_entered" from="coffee_touched" to="." method="_on_coffee_touched_area_entered"]
 [connection signal="body_entered" from="coffee_touched" to="." method="_on_coffee_touched_body_entered"]
