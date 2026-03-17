@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://bha2g37ky6yob"]
+
+[ext_resource type="Texture2D" uid="uid://ml2xx5kolqse" path="res://Untitled_Artwork.png" id="1_0bpdh"]
+[ext_resource type="Script" uid="uid://cqdhqhufhj38c" path="res://scripts/credits.gd" id="1_2ckv8"]
+
+[node name="Control" type="Control" unique_id=517428581]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2ckv8")
+
+[node name="UntitledArtwork" type="Sprite2D" parent="." unique_id=610665828]
+position = Vector2(-179.99997, 611)
+scale = Vector2(0.48644072, 0.39634147)
+texture = ExtResource("1_0bpdh")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2074006713]
+position = Vector2(-180, 614)
+
+[node name="Label" type="Label" parent="." unique_id=1840285586]
+layout_mode = 0
+offset_left = -453.0
+offset_top = 395.0
+offset_right = 79.0
+offset_bottom = 808.0
+text = "Your cooking saved the universe. 
+
+Thank you for playing Let Me Cook!
+
+Credits:
+
+Sprites:
+HoneyDev1
+Mr. Coconut
+
+Game Programming:
+Mr. Coconut
+HoneyDev1
+
+SFX and Music:
+Morro
+
+Special Thanks to the Godot Game Engine!"
+
+[node name="Button" type="Button" parent="." unique_id=1068634384]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1020.0
+offset_top = 560.0
+offset_right = -941.0
+offset_bottom = 591.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Continue"
+
+[node name="Button2" type="Button" parent="." unique_id=1452755422]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -917.0
+offset_top = 560.0
+offset_right = -825.0
+offset_bottom = 591.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit Game"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

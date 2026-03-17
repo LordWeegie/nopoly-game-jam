@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 		get_tree().reload_current_scene()
 	if kills >= 5:
 		print("You won!")
-		get_tree().change_scene_to_file("res://scenes/main.tscn")
+		get_tree().change_scene_to_file("res://scenes/credits.tscn")
 	if Input.is_action_just_pressed("shoot"):
 		if !$AnimationPlayer.is_playing():
 			$AnimationPlayer.play("shoot")
