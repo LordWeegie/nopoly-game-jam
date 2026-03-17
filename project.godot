@@ -37,6 +37,7 @@ delivery_point1=""
 enemy=""
 player=""
 table=""
+table_area=""
 
 [input]
 

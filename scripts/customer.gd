@@ -29,10 +29,12 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play("jump")
 		
 	if velocity.x > 0:
-		$RayCastContainer.scale.x = 1
+		if $RayCastContainer != null:
+			$RayCastContainer.scale.x = 1
 		$AnimatedSprite2D.flip_h = false
 	if velocity.x < 0:
-		$RayCastContainer.scale.x = -1
+		if $RayCastContainer != null:
+			$RayCastContainer.scale.x = -1
 		$AnimatedSprite2D.flip_h = true
 
 	move_and_slide()

@@ -13,7 +13,7 @@ const SPEED = 400
 var carrying_food = false
 
 var item_carried = false
-
+@export var show_text = false
 # Ready function
 func _ready() -> void:
 	if len(Global.active_food) > 0:
@@ -54,6 +54,10 @@ func _pickup():
 
 
 func _physics_process(delta: float) -> void:
+	if show_text:
+		$Label.text = \"Press E to give to customer\"
+	else:
+		$Label.text = \"\"
 	_get_input()
 	move_and_slide()
 	_pickup()
@@ -112,3 +116,10 @@ label_settings = SubResource("LabelSettings_l5cu5")
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=659266388]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=868131221]
+
+[node name="Label" type="Label" parent="." unique_id=1286483687]
+offset_left = -92.0
+offset_top = -66.0
+offset_right = 116.0
+offset_bottom = -43.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
