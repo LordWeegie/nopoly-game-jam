@@ -10,6 +10,8 @@ var carrying_coffee = false
 
 var item_carried
 
+var looking_at_table = false
+
 #movement and turning!
 func _get_input():
 	var direction = Input.get_vector("left", "right", "up", "down")
@@ -37,6 +39,7 @@ func _get_input():
 func _physics_process(delta: float) -> void:
 	_get_input()
 	move_and_slide()
+	_table()
 
 func _pickup():
 	#lable for baguette collected!
@@ -54,3 +57,8 @@ func _pickup():
 	#lable for all time
 	if not carrying_food:
 		$Lable1.text = "obtained none"
+
+func _table():
+	if looking_at_table and $RayCast2D.is_colliding() and $RayCast2D.get_collider().is_in_group("table"):
+		if Input.is_action_just_pressed("pickup"):
+			get_tree().change_scene_to_file("res://scenes/coffee.tscn")

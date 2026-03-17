@@ -36,6 +36,7 @@ milk=""
 delivery_point1=""
 enemy=""
 player=""
+table=""
 
 [input]
 

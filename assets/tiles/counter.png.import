@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c54wmlgm7ka4a"
-valid=false
+uid="uid://bh40ck772fx8v"
+path="res://.godot/imported/counter.png-ae30111fdfa0f2865d8c7525a5797b77.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://assets/things/._tutorial.png"
+source_file="res://assets/tiles/counter.png"
+dest_files=["res://.godot/imported/counter.png-ae30111fdfa0f2865d8c7525a5797b77.ctex"]
 
 [params]
 
