@@ -22,10 +22,10 @@ position = Vector2(-180, 614)
 
 [node name="Label" type="Label" parent="." unique_id=1840285586]
 layout_mode = 0
-offset_left = -453.0
-offset_top = 395.0
-offset_right = 79.0
-offset_bottom = 808.0
+offset_left = -452.0
+offset_top = 300.0
+offset_right = 80.0
+offset_bottom = 869.0
 text = "Your cooking saved the universe. 
 
 Thank you for playing Let Me Cook!
@@ -40,10 +40,14 @@ Game Programming:
 Mr. Coconut
 HoneyDev1
 
-SFX and Music:
+Music:
+Mr. Coconut
+
+SFX:
 Morro
 
-Special Thanks to the Godot Game Engine!"
+
+Special Thanks to the Godot Game Engine and No Poly Game Jam!"
 
 [node name="Button" type="Button" parent="." unique_id=1068634384]
 layout_mode = 1
