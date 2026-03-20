@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n6mms5ymajri"
-valid=false
+uid="uid://pmnccre50nhb"
+path="res://.godot/imported/waiter-Sheet.png-3ffc015552f23a3e696b4735c4113016.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://assets/french_dude_2/._Untitled_Artwork-2.png"
+source_file="res://assets/french_dude/waiter-Sheet.png"
+dest_files=["res://.godot/imported/waiter-Sheet.png-3ffc015552f23a3e696b4735c4113016.ctex"]
 
 [params]
 

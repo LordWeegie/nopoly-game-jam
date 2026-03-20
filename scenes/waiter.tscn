@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bh8yc752t2ph6"]
 
-[ext_resource type="Texture2D" uid="uid://b31qpdfgqolao" path="res://assets/tested.webp" id="2_4g130"]
+[ext_resource type="Texture2D" uid="uid://pmnccre50nhb" path="res://assets/french_dude/waiter-Sheet.png" id="1_l5cu5"]
 
 [sub_resource type="GDScript" id="GDScript_l5cu5"]
 script/source = "#player model
@@ -54,6 +54,10 @@ func _pickup():
 
 
 func _physics_process(delta: float) -> void:
+	if velocity.y != 0 or velocity.x != 0:
+		$AnimatedSprite2D.play(\"walk\")
+	else:
+		$AnimatedSprite2D.stop()
 	$Label2.text =  \"Time till death: \" + str(int($Timer.time_left))
 	if int($Timer.time_left) == 1:
 		get_tree().reload_current_scene()
@@ -70,18 +74,39 @@ func _physics_process(delta: float) -> void:
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7m2g"]
 size = Vector2(18, 17)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o4m7j"]
-atlas = ExtResource("2_4g130")
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bqyt"]
+atlas = ExtResource("1_l5cu5")
 region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qy88"]
+atlas = ExtResource("1_l5cu5")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlnrk"]
+atlas = ExtResource("1_l5cu5")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ex4yy"]
+atlas = ExtResource("1_l5cu5")
+region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ge1nj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o4m7j")
+"texture": SubResource("AtlasTexture_6bqyt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qy88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlnrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ex4yy")
 }],
 "loop": true,
-"name": &"default",
+"name": &"walk",
 "speed": 5.0
 }]
 
@@ -102,6 +127,9 @@ shape = SubResource("RectangleShape2D_s7m2g")
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_ge1nj")
+animation = &"walk"
+frame = 1
+frame_progress = 0.5004269
 
 [node name="Lable1" type="Label" parent="." unique_id=27034045]
 modulate = Color(0.17371473, 0.34647405, 0.60365796, 1)

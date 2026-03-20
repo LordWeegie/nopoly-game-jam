@@ -5,6 +5,8 @@ var active_food : String = "Nothing"
 var bowl_items : Array = []
 var coffee_machine_items : Array = []
 var needed_coffee_machine_items : Array = []
+var last_food = "Nothing"
+var food_once = false
 
 var foods : Array[String] = ["baguette", "coffee", "croissant"]
 
@@ -20,7 +22,9 @@ func _ready() -> void:
 	print(active_food)
 
 func _reset_food():
-	random_food = randi_range(0, 2)
-	active_food = foods[random_food]
+	last_food = active_food
+	while active_food == last_food:
+		random_food = randi_range(0, 2)
+		active_food = foods[random_food]
 	print(random_food)
 	print(active_food)
