@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bh40ck772fx8v" path="res://assets/tiles/counter.png" id="3_nqcc7"]
 [ext_resource type="PackedScene" path="res://scenes/table.tscn" id="5_pc087"]
 [ext_resource type="PackedScene" path="res://scenes/pit.tscn" id="7_omrgh"]
+[ext_resource type="Texture2D" uid="uid://d2v6wkquemg4l" path="res://assets/french_dude/customer_lol.png" id="8_ncsg4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nqcc7"]
 texture = ExtResource("1_5gu6x")
@@ -364,3 +365,129 @@ scale = Vector2(4.5625, 2.3750002)
 [node name="Sprite2D36" parent="." unique_id=1611274879 instance=ExtResource("7_omrgh")]
 position = Vector2(-73.5, 26.5)
 scale = Vector2(4.59375, 1.65625)
+
+[node name="CustomerLol" type="Sprite2D" parent="." unique_id=1385680981]
+position = Vector2(360.99997, 40.000004)
+rotation = 3.153855
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("8_ncsg4")
+
+[node name="CustomerLol2" type="Sprite2D" parent="." unique_id=1255092948]
+position = Vector2(452, 36.000004)
+rotation = 3.153855
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("8_ncsg4")
+
+[node name="CustomerLol3" type="Sprite2D" parent="." unique_id=609215454]
+position = Vector2(528, 38)
+rotation = 3.153855
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("8_ncsg4")
+
+[node name="CustomerLol4" type="Sprite2D" parent="." unique_id=237794070]
+position = Vector2(606, 38)
+rotation = 3.153855
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("8_ncsg4")
+
+[node name="CustomerLol5" type="Sprite2D" parent="." unique_id=305739048]
+position = Vector2(683, 37.000004)
+rotation = 3.153855
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("8_ncsg4")
+
+[node name="CustomerLol6" type="Sprite2D" parent="." unique_id=202188823]
+position = Vector2(220, 98.99999)
+rotation = 4.742492
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("8_ncsg4")
+
+[node name="CustomerLol7" type="Sprite2D" parent="." unique_id=1924794406]
+position = Vector2(222, 167)
+rotation = 4.742492
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("8_ncsg4")
+
+[node name="CustomerLol8" type="Sprite2D" parent="." unique_id=2088676432]
+position = Vector2(223, 239)
+rotation = 4.742492
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("8_ncsg4")
+
+[node name="CustomerLol9" type="Sprite2D" parent="." unique_id=743504832]
+position = Vector2(281, 323)
+rotation = 4.742492
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("8_ncsg4")
+
+[node name="CustomerLol10" type="Sprite2D" parent="." unique_id=1814979387]
+position = Vector2(284, 386)
+rotation = 4.742492
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("8_ncsg4")
+
+[node name="CustomerLol11" type="Sprite2D" parent="." unique_id=926854189]
+position = Vector2(514, 388)
+rotation = 4.742492
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("8_ncsg4")
+
+[node name="CustomerLol12" type="Sprite2D" parent="." unique_id=729945166]
+position = Vector2(509, 318)
+rotation = 4.742492
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("8_ncsg4")
+
+[node name="CustomerLol13" type="Sprite2D" parent="." unique_id=1984834331]
+position = Vector2(738, 316)
+rotation = 4.742492
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("8_ncsg4")
+
+[node name="CustomerLol14" type="Sprite2D" parent="." unique_id=915608210]
+position = Vector2(739.99994, 387)
+rotation = 4.742492
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("8_ncsg4")
+
+[node name="CustomerLol15" type="Sprite2D" parent="." unique_id=890372631]
+position = Vector2(600.00006, 372.00003)
+rotation = 7.8422394
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("8_ncsg4")
+
+[node name="CustomerLol16" type="Sprite2D" parent="." unique_id=429038101]
+position = Vector2(595.00006, 307.00003)
+rotation = 7.8422394
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("8_ncsg4")
+
+[node name="CustomerLol17" type="Sprite2D" parent="." unique_id=672486314]
+position = Vector2(379.00006, 305.00003)
+rotation = 7.8422394
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("8_ncsg4")
+
+[node name="CustomerLol18" type="Sprite2D" parent="." unique_id=2138662844]
+position = Vector2(390.00006, 368.00003)
+rotation = 7.8422394
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("8_ncsg4")
+
+[node name="CustomerLol19" type="Sprite2D" parent="." unique_id=1282011683]
+position = Vector2(145.00009, 310.00003)
+rotation = 7.8422394
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("8_ncsg4")
+
+[node name="CustomerLol20" type="Sprite2D" parent="." unique_id=1947337663]
+position = Vector2(138.00002, 375.00003)
+rotation = 7.8422394
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("8_ncsg4")
+
+[node name="CustomerLol21" type="Sprite2D" parent="." unique_id=1257936092]
+position = Vector2(29.000004, 318.00003)
+rotation = 6.351132
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("8_ncsg4")

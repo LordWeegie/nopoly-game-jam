@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://bha2g37ky6yob"]
+[gd_scene format=3 uid="uid://q546kafa6phb"]
 
 [ext_resource type="Texture2D" uid="uid://ml2xx5kolqse" path="res://Untitled_Artwork.png" id="1_0bpdh"]
-[ext_resource type="Script" uid="uid://cqdhqhufhj38c" path="res://scripts/credits.gd" id="1_2ckv8"]
+[ext_resource type="Script" path="res://scripts/credits.gd" id="1_2ckv8"]
 
 [node name="Control" type="Control" unique_id=517428581]
 layout_mode = 3
@@ -41,7 +41,7 @@ Mr. Coconut
 HoneyDev1
 
 Music:
-Mr. Coconut
+Mr. Coconut (beginner don't expect much lol)
 
 SFX:
 Morro
