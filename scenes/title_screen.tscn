@@ -47,6 +47,12 @@ stream = ExtResource("3_s4lrb")
 volume_db = -25.0
 autoplay = true
 
+[node name="Label" type="Label" parent="." unique_id=1254321031]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Hold ESC on any level to quit!"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

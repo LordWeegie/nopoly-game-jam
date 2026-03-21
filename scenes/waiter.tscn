@@ -46,7 +46,7 @@ func _get_input():
 func _pickup():
 	#lable for baguette collected!
 	if carrying_food:
-		$Lable1.text = \"Carrying: \" + Global.active_food
+		$Lable1.text = \"Carrying: \" + Global.active_food.capitalize()
 	
 	#lable for all time
 	if not carrying_food:
@@ -177,3 +177,21 @@ offset_right = 143.0
 offset_bottom = -77.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+
+[node name="Label3" type="Label" parent="." unique_id=1573556709]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -354.0
+offset_top = -190.0
+offset_right = 355.0
+offset_bottom = -115.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Instructions:
+
+In the limited time take your food to a random customer till told you found the correct one! "

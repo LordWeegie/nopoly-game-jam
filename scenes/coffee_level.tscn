@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://coup4qkqtcs8y"]
 
-[ext_resource type="PackedScene" path="res://scenes/player_coffee.tscn" id="1_17jqh"]
+[ext_resource type="PackedScene" uid="uid://dldx6rg4phf1j" path="res://scenes/player_coffee.tscn" id="1_17jqh"]
 [ext_resource type="Script" path="res://scripts/coffee_level.gd" id="1_j8iy6"]
 [ext_resource type="PackedScene" path="res://scenes/enemy_coffee.tscn" id="2_xx74y"]
 [ext_resource type="PackedScene" path="res://scenes/coffee_map.tscn" id="3_j8iy6"]
@@ -78,6 +78,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.33519, 3.9599729, -3.42258
 
 [node name="Doomlevel" type="AudioStreamPlayer" parent="." unique_id=1177056318]
 stream = ExtResource("5_ugtoa")
+volume_db = -15.0
 autoplay = true
 
 [connection signal="area_entered" from="coffee_touched" to="." method="_on_coffee_touched_area_entered"]

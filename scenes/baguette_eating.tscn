@@ -150,6 +150,7 @@ texture = ExtResource("5_k0mbf")
 
 [node name="Baguette" type="AudioStreamPlayer" parent="." unique_id=1892011414]
 stream = ExtResource("6_igekw")
+volume_db = -15.0
 autoplay = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

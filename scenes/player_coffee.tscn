@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://b65bbjh0qmdeg"]
+[gd_scene format=3 uid="uid://dldx6rg4phf1j"]
 
 [ext_resource type="PackedScene" uid="uid://dppwwc0st1xrx" path="res://assets/doom_level/thegun.fbx" id="1_fi1so"]
-[ext_resource type="Script" uid="uid://brqcett3tcg7n" path="res://scripts/player_coffee.gd" id="1_tfb7w"]
+[ext_resource type="Script" path="res://scripts/player_coffee.gd" id="1_tfb7w"]
 [ext_resource type="AudioStream" uid="uid://coc64botq10jl" path="res://assets/doom_level/gun_shot.wav" id="3_va1ek"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0j8rm"]
@@ -101,3 +101,7 @@ libraries/ = SubResource("AnimationLibrary_va1ek")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=174366195]
 stream = ExtResource("3_va1ek")
+volume_db = -20.0
+
+[node name="Timer" type="Timer" parent="." unique_id=1084421885]
+wait_time = 5.0
