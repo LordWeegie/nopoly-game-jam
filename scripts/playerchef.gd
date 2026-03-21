@@ -63,7 +63,7 @@ func _physics_process(delta):
 		print("!!!")
 		get_tree().reload_current_scene()
 	if $RayCast2D.is_colliding():
-		if near_delivery_point1:
+		if near_delivery_point1 and carrying_baguette or near_delivery_point1 and carrying_coffee or near_delivery_point1 and carrying_croissant:
 			print("hello dude")
 			$Label4.text = "Press E to deliver food"
 			if Input.is_action_just_pressed("pickup"):

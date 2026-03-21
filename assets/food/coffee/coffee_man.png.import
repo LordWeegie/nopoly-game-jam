@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dalk4nfe5kjuq"
 path.s3tc="res://.godot/imported/coffee_man.png-d9b3f334eb4f384d04b584acb6f30dea.s3tc.ctex"
+path.etc2="res://.godot/imported/coffee_man.png-d9b3f334eb4f384d04b584acb6f30dea.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/food/coffee/coffee_man.png"
-dest_files=["res://.godot/imported/coffee_man.png-d9b3f334eb4f384d04b584acb6f30dea.s3tc.ctex"]
+dest_files=["res://.godot/imported/coffee_man.png-d9b3f334eb4f384d04b584acb6f30dea.s3tc.ctex", "res://.godot/imported/coffee_man.png-d9b3f334eb4f384d04b584acb6f30dea.etc2.ctex"]
 
 [params]
 
